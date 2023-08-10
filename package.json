@@ -1,0 +1,13 @@
+{
+  "name": "restaurantpage",
+  "version": "1.0.0",
+  "description": "My first project using Javascript to generate the entire contents of the webpage. This is also my first project using Webpack.",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "webpack": "^5.88.2",
+    "webpack-cli": "^5.1.4"
+  }
+}

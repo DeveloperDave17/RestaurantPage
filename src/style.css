@@ -67,7 +67,7 @@ button {
     margin-bottom: 5px;
 }
 
-.home-page-container {
+.home-page-container, #contactContainer, #menu-container {
     box-sizing: border-box;
     align-self: center;
     justify-self: center;
@@ -82,12 +82,21 @@ button {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+#menu-container {
+    height: auto;
+}
+
+.home-page-container {
     justify-content: center;
 }
 
 .home-page-container>img {
     width: 350px;
     height: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .footer {
@@ -104,4 +113,27 @@ button {
     height: 32px;
     width: auto;
     margin-left: 6px;
+}
+
+.menu-item {
+    border: 5px solid var(--accent);
+    background-color: var(--secondary);
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.menu-item>h1 {
+    text-align: center;
+}
+
+.info-pic {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.info-pic>img {
+    height: 300px;
+    width: 350px;
+    border: 2px solid var(--accent);
 }

@@ -1,7 +1,9 @@
 import './style.css';
 import displayNavbar from "./navbar";
-import displayHomePage from './homePage';
+import displayHomeContent from './homePage';
 import githubIcon from './logo-github.svg';
+import displayContactContent from './contactContent';
+import displayMenuContent from './menu';
 
 function displayRestaurantName() {
     const content = document.querySelector('#content');
@@ -33,8 +35,33 @@ function displayFooter() {
     content.appendChild(footer);
 }
 
-displayHeader();
-const navBarContainer = document.querySelector('.navbar-container');
-(navBarContainer.childNodes)[0].classList.add('selected');
-displayHomePage();
-displayFooter();
+function clearContent() {
+    const content = document.getElementById('content');
+    content.replaceChildren();
+}
+
+function displayPage(displayContent) {
+    clearContent();
+    displayHeader();
+    const navBarContainer = document.querySelector('.navbar-container');
+    if (displayContent === displayHomeContent) {
+        (navBarContainer.childNodes)[0].classList.add('selected');
+    } else if (displayContent === displayMenuContent) {
+        (navBarContainer.childNodes)[1].classList.add('selected');
+    } else {
+        (navBarContainer.childNodes)[2].classList.add('selected');
+    }
+    displayContent();
+    displayFooter();
+    assignEventListeners();
+}
+
+function assignEventListeners() {
+    const navBarContainer = document.querySelector('.navbar-container');
+    (navBarContainer.childNodes)[0].addEventListener('click', () => {displayPage(displayHomeContent)});
+    (navBarContainer.childNodes)[1].addEventListener('click', () => {displayPage(displayMenuContent)});
+    (navBarContainer.childNodes)[2].addEventListener('click', () => {displayPage(displayContactContent)});
+}
+
+
+displayPage(displayHomeContent);
